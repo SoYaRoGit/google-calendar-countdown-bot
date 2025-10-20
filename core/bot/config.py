@@ -2,6 +2,7 @@ from aiogram import Dispatcher, Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums.parse_mode import ParseMode
 from config import config
+from core.bot.handlers import start
 
 
 bot = Bot(
@@ -29,9 +30,10 @@ async def shutdown() -> None:
 
 async def include_router() -> None:
     """Функция подключения внешний роутеров"""
-    ...
+    dispatcher.include_router(start.router)
 
 async def start_bot() -> None:
+    """Функция запуска бота"""
     await include_router()
     await bot.delete_webhook(drop_pending_updates=True)
     await dispatcher.start_polling(bot)
