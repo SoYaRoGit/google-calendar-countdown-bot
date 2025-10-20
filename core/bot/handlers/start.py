@@ -15,3 +15,5 @@ async def command_start_handler(message: types.Message) -> None:
     await message.answer(
         text=LANGUAGE_RU["command_start_handler"].format(user.full_name)
     )
+
+

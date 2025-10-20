@@ -2,7 +2,7 @@ from aiogram import Dispatcher, Bot
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums.parse_mode import ParseMode
 from config import config
-from core.bot.handlers import start
+from core.bot.handlers import start, calendar
 
 
 bot = Bot(
@@ -31,6 +31,7 @@ async def shutdown() -> None:
 async def include_router() -> None:
     """Функция подключения внешний роутеров"""
     dispatcher.include_router(start.router)
+    dispatcher.include_router(calendar.router)
 
 async def start_bot() -> None:
     """Функция запуска бота"""
