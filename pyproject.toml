@@ -6,5 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "aiogram>=3.22.0",
+    "google-api-python-client>=2.185.0",
+    "google-auth>=2.41.1",
     "pydantic-settings>=2.11.0",
 ]
